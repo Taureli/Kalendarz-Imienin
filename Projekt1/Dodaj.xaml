@@ -12,7 +12,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-	
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -29,13 +29,13 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <phone:LongListSelector Name="DodajList" Height="604" VerticalAlignment="Top" Margin="25,0">
+            <phone:LongListSelector Name="DodajList" Height="555" VerticalAlignment="Top" Margin="25,49,25,0">
                 <phone:LongListSelector.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="0,0,0,25">
                             <Grid VerticalAlignment="Top">
                                 <Button x:Name="DodajButton" Tag="{Binding Id}" Grid.Column="0" Click="DodajButton_Click" MaxWidth="76" MaxHeight="76" HorizontalAlignment="Left" VerticalAlignment="Center" Width="76" Height="76">
-                                   <!-- <Image Source="/Assets/AppBar/add.png"/> -->
+                                    <!-- <Image Source="/Assets/AppBar/add.png"/> -->
                                     <TextBlock Text="+" TextAlignment="Center" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="70" Height="70" Margin="0,10,0,0"/>
                                 </Button>
                                 <TextBlock Grid.Column="1" Text="{Binding Imieniny}" TextWrapping="Wrap" Margin="70,-2,12,0" FontSize="36" FontWeight="Bold"/>
@@ -47,7 +47,9 @@
                     </DataTemplate>
                 </phone:LongListSelector.ItemTemplate>
             </phone:LongListSelector>
+            <Button x:Name="SzukajButton" Content="Szukaj" HorizontalAlignment="Left" Margin="331,-27,0,0" VerticalAlignment="Top" Width="125" Height="76" Click="SzukajButton_Click"/>
         </Grid>
+        <TextBox x:Name="Szukane" Height="76" Margin="12,124,130,0" TextWrapping="Wrap" Text="Wpisz szukane imię" Foreground="Gray" GotFocus="Szukane_GotFocus" LostFocus="Szukane_LostFocus" VerticalAlignment="Top" Grid.RowSpan="2" KeyDown="Szukane_KeyDown"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

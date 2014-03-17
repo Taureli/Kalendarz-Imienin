@@ -19,7 +19,7 @@ namespace Projekt1
             InitializeComponent();
 
             DayText.Text = DateTime.Today.Day.ToString();
-            showMonth();
+            MonthText.Text = showMonth(DateTime.Today.Month);
 
         }
 
@@ -28,69 +28,65 @@ namespace Projekt1
             using (ImieninyContext ctx = new ImieninyContext(ImieninyContext.ConnectionString))
             {
                 ctx.CreateIfNotExists();
-                ctx.LogDebug = true;
-               // MainLongListSelector.ItemsSource = ctx.Tabela.ToList();
+
                 MainLongListSelector.ItemsSource = ctx.Tabela.Where(d => d.Dzien == DateTime.Today.Day).Where(d => d.Miesiac == DateTime.Today.Month).ToList();
 
-
-                JutroList.ItemsSource = ctx.Tabela.Where(d => d.Dzien == DateTime.Today.Day + 1).Where(d => d.Miesiac == DateTime.Today.Month).ToList();
+                JutroList.ItemsSource = ctx.Tabela.Where(d => d.Dzien == DateTime.Today.AddDays(1).Day).Where(d => d.Miesiac == DateTime.Today.AddDays(1).Month).ToList();
 
                 ZnajomiList.ItemsSource = ctx.Tabela.Where(d => d.Znajomy == "Visible").ToList();
 
             }
         }
 
-        void showMonth(){
-
-            int month = DateTime.Today.Month;
+        String showMonth(int month){
 
             switch (month)
             {
 
                 case(1):
-                    MonthText.Text = "Stycznia";
-                    break;
+                    return "Stycznia";
                 case (2):
-                    MonthText.Text = "Lutego";
-                    break;
+                    return "Lutego";
                 case (3):
-                    MonthText.Text = "Marca";
-                    break;
+                    return "Marca";
                 case (4):
-                    MonthText.Text = "Kwietnia";
-                    break;
+                    return "Kwietnia";
                 case (5):
-                    MonthText.Text = "Maja";
-                    break;
+                    return "Maja";
                 case (6):
-                    MonthText.Text = "Czerwca";
-                    break;
+                    return "Czerwca";
                 case (7):
-                    MonthText.Text = "Lipca";
-                    break;
+                    return "Lipca";
                 case (8):
-                    MonthText.Text = "Sierpnia";
-                    break;
+                    return "Sierpnia";
                 case (9):
-                    MonthText.Text = "Września";
-                    break;
+                    return "Września";
                 case (10):
-                    MonthText.Text = "Października";
-                    break;
+                    return "Października";
                 case (11):
-                    MonthText.Text = "Listopada";
-                    break;
+                    return "Listopada";
                 case (12):
-                    MonthText.Text = "Grudnia";
-                    break;
+                    return "Grudnia";
 
             }
+
+            return "";
 
         }
 
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/Dodaj.xaml", UriKind.Relative));
+        }
+
+        private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Usun.xaml", UriKind.Relative));
+        }
+
+        private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
     }
 }

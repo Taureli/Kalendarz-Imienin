@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProfilerSession Type="ExecutionPerformanceAnalysis" Name="Projekt11717203638">
+  <TargetApplication Name="Projekt1_Debug_AnyCPU" SourceProject="Projekt1.csproj" Type="WindowsPhone">
+    <ApplicationBinary Path="Bin\Debug\Projekt1_Debug_AnyCPU.xap" Timestamp="2014-03-10 21:16:07" />
+    <ApplicationIconPath Path="" />
+    <SymbolPaths>
+      <Path Value="Bin\Debug\" />
+    </SymbolPaths>
+  </TargetApplication>
+  <Settings>
+    <Probe Name="Visual">
+      <CollectElementLevelCosting Enabled="True" />
+      <CollectSnapshots Enabled="True" Interval="1000" Resampling="2" />
+      <CollectMediaEvents Enabled="True" />
+      <CollectCacheDetails Enabled="True" />
+    </Probe>
+    <Probe Name="Code">
+      <SampleCallStack Enabled="True" Depth="4294967295" Interval="10" />
+      <CollectPerformanceCounters Enabled="True" />
+    </Probe>
+    <Probe Name="Memory">
+      <MemoryCallStack Enabled="False" Depth="4294967295" />
+      <ObjectTree Enabled="False" Interval="10" />
+    </Probe>
+  </Settings>
+  <Data>
+    <Logs>
+      <File Type="NativeFormat" Path="PerfLogs\Projekt11717203638\tmp7AAF.spl" />
+      <File Type="SRUMData" Path="PerfLogs\Projekt11717203638\tmp7AB0.srum" />
+    </Logs>
+  </Data>
+  <TargetDeviceSettings OSVersion="8.0.9903" AvailablePhysicalMemoryAtStartup="0" ProcessorArchitectureType="Intel" ProcessorInformation="X86" IsEmulator="True" />
+</ProfilerSession>

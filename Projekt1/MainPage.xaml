@@ -34,15 +34,15 @@
 
                 <!--ContentPanel - place additional content here-->
                 <Grid x:Name="ContentPanel" Margin="12,110,12,0" Grid.RowSpan="2" Height="650">
-                    <TextBlock x:Name="DayText" Margin="124,26,124,446" FontSize="120" FontFamily="Segoe WP Black" TextAlignment="Center" />
-                    <TextBlock x:Name="MonthText" Margin="140,154,140,0" VerticalAlignment="Top" Height="56" TextAlignment="Center" FontSize="48" FontWeight="Bold"/>
-                    <TextBlock x:Name="Etykieta1" Margin="110,239,110,0" Text="Imieniny obchodzą:" VerticalAlignment="Top" Height="31" TextAlignment="Center" FontSize="22" FontWeight="Bold"/>
+                    <TextBlock x:Name="DayText" Margin="124,16,124,456" FontSize="120" FontFamily="Segoe WP Black" TextAlignment="Center" />
+                    <TextBlock x:Name="MonthText" Margin="140,144,140,0" VerticalAlignment="Top" Height="56" TextAlignment="Center" FontSize="48" FontWeight="Bold"/>
+                    <TextBlock x:Name="Etykieta1" Margin="110,225,110,0" Text="Imieniny obchodzą:" VerticalAlignment="Top" Height="31" TextAlignment="Center" FontSize="22" FontWeight="Bold"/>
 
-                    <TextBlock Margin="118,425,118,0" Text="Jutrzejsze imieniny:" VerticalAlignment="Top" Height="39" FontSize="22" TextAlignment="Center"/>
+                    <TextBlock Margin="118,415,118,0" Text="Jutrzejsze imieniny:" VerticalAlignment="Top" Height="39" FontSize="22" TextAlignment="Center"/>
 
 
 
-                    <phone:LongListSelector x:Name="MainLongListSelector" Height="139" Margin="120,278,120,0" VerticalAlignment="Top">
+                    <phone:LongListSelector x:Name="MainLongListSelector" Height="146" Margin="120,264,120,0" VerticalAlignment="Top">
 
 
                         <phone:LongListSelector.ItemTemplate>
@@ -62,7 +62,7 @@
 
                     </phone:LongListSelector>
 
-                    <phone:LongListSelector x:Name="JutroList" Height="123" Margin="120,463,120,0" VerticalAlignment="Top">
+                    <phone:LongListSelector x:Name="JutroList" Height="129" Margin="120,453,120,0" VerticalAlignment="Top">
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,0,17">
@@ -84,7 +84,7 @@
 
             <phone:PivotItem Header="Znajomi">
 
-                <phone:LongListSelector Name="ZnajomiList" Height="604" VerticalAlignment="Top" Margin="25,0">
+                <phone:LongListSelector Name="ZnajomiList" Height="544" VerticalAlignment="Top" Margin="25,0">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,25">
@@ -97,7 +97,7 @@
                                     <TextBlock Grid.Column="1" Text="{Binding Imieniny}" TextWrapping="Wrap" Margin="70,-7,12,0" FontSize="36" FontWeight="Bold"/>
                                     <TextBlock Grid.Column="1" Text="{Binding Dzien}" TextWrapping="Wrap" Margin="70,30,0,0" FontSize="20" FontWeight="Bold"/>
                                     <TextBlock Grid.Column="1" Text="-" TextWrapping="Wrap" Margin="95,30,0,0" FontSize="20" FontWeight="Bold"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Miesiac}" TextWrapping="Wrap" Margin="105,30,0,0" FontSize="20" FontWeight="Bold"/>
+                                    <TextBlock x:Name="OsobaMiesiac" Grid.Column="1" Text="{Binding Miesiac}" TextWrapping="Wrap" Margin="105,30,0,0" FontSize="20" FontWeight="Bold"/>
                                 </Grid>
                             </StackPanel>
                         </DataTemplate>
@@ -108,7 +108,7 @@
 
         </phone:Pivot>
 
-        
+
 
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
     </Grid>
@@ -116,11 +116,11 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="Dodaj" Click="ApplicationBarIconButton_Click"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/delete.png" Text="Usuń" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/delete.png" Text="Usuń" Click="ApplicationBarIconButton_Click_1" />
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="O programie" />
+                <shell:ApplicationBarMenuItem Text="O programie" Click="ApplicationBarMenuItem_Click"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-    
+
 </phone:PhoneApplicationPage>
